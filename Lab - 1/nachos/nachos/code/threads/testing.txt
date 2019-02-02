@@ -1,0 +1,31 @@
+
+void flightThreadImpl(){
+  1.Spwan 5 request threads here.
+  2. Yield the current thread
+  3. Say you have reached the next city
+
+  4. You wake up the reservation threads whose dest say B is the next city and put them to ready queue.
+  5. Put the curr flight thread to sleep again
+
+  6. You may loop around and go to step 1 and again spwan 5 threads for Dest B.
+  7 Or finish the flight thread here and , Take advantage of the main thread.
+
+
+
+}
+
+void reservationImpl(){
+  1. Create a Request object
+  2. Augment it with Id, No. of passengers, source city, dest city , NO OF SEATS allocated
+  3. If all seats were allocated ,add this request to the Granted Queue/List and put itself to SLEEP.
+  4. else , put the thread to the ungranted Queue/List and Finish the thread.
+
+  5 After wake up, threads will resume the execution here,
+    - deallocate the bitmap here , which means seats are empty on the flight.
+    - finish the thread.
+
+}
+
+void threadTest(){
+  Fork a flight thread.
+}
